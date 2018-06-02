@@ -26,7 +26,7 @@ public class Stack {
     }
 
     public int pop() {
-        int element = content[top];
+        int element = content[10];
         top--;
         return element;
     }

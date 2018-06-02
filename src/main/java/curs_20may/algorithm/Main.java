@@ -4,29 +4,7 @@ public class Main
 {
     public static void main( String[] args )
     {
-        PhoneBook phoneBook = new PhoneBook();
-
-        Person[] persons = new Person[20];
-
-        Person person1 = new Person();
-        person1.setName("teo");
-        person1.setPhoneNumber("0749934232");
-
-        Person person2 = new Person();
-        person2.setName("vlad");
-        person2.setPhoneNumber("0723879686");
-
-        Person person3 = new Person();
-        person3.setName("mirela");
-        person3.setPhoneNumber("06452232");
-
-        persons[1] = person1;
-        persons[2] = person2;
-        persons[3] = person3;
-
-        phoneBook.addPersons(persons);
-
-        findPhoneNumberByName("MIRELA",phoneBook);
+        System.out.println(adunareCifre(999999999));
 
     }
 
@@ -38,5 +16,41 @@ public class Main
                System.out.println(person.getPhoneNumber());
            }
        }
+    }
+
+    public static void findPersonsByCommonNationality(String name, PhoneBook phoneBook) {
+        Person myPerson = null;
+
+        for(int i=0;i<20;i++) {
+            Person person = phoneBook.getPersons()[i];
+
+            if(person!=null && person.getName().equals(name)){
+                myPerson=person;
+                break;
+            }
+        }
+        if(myPerson!=null) {
+            for (int i = 0; i < 20; i++) {
+                Person person = phoneBook.getPersons()[i];
+
+                if (person != null && person.getNationalitate().equals(myPerson.getNationalitate())) {
+                    System.out.println(person.getName());
+                }
+            }
+        }
+
+    }
+
+
+    public static int adunareCifre(int numar) {
+        int suma = 0;
+        while (numar != 0) {
+            suma = suma + numar % 10;//impartind un numar la 10 este ca si ccum am desparti ultima cifra de restul cifrelor
+            numar = numar / 10;
+        }
+        if (suma <= 9)
+            return suma;
+        else
+            return (adunareCifre(suma));
     }
 }

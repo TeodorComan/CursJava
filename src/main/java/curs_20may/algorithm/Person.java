@@ -4,6 +4,17 @@ public class Person {
    private String name;
    private String phoneNumber;
 
+   /** Romania, nu rOmaniA **/
+   private String nationalitate;
+
+   public String getNationalitate() {
+       return nationalitate;
+   }
+
+   public void setNationalitate(String nationalitate) {
+       this.nationalitate = nationalitate.substring(0,1).toUpperCase() + nationalitate.substring(1).toLowerCase();
+   }
+
    public String getName(){
        return name;
    }
