@@ -16,11 +16,11 @@ public class LinkedListQueue {
 
         while(aux!=null) {
             if(aux.getPrevious()==null) {
+                aux.getNext().setPrevious(null);
+                aux.setNext(null);
                 return aux.getData();
             }
-
             aux = aux.getPrevious();
-
         }
 
         return null;
