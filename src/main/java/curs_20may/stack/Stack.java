@@ -6,8 +6,8 @@ public class Stack {
 
     private int[] content = new int[5];
 
-    //boolean isEmpty;
 
+    //boolean isEmpty;
     public boolean isEmpty() {
         if(top==0) {
             return true;
@@ -26,7 +26,7 @@ public class Stack {
     }
 
     public int pop() {
-        int element = content[10];
+        int element = content[top];
         top--;
         return element;
     }

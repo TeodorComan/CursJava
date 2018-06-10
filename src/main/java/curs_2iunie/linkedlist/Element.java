@@ -42,4 +42,28 @@ public class Element {
     public void setData(int data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        String stringRepresentation = "Element{" +
+                "N";
+
+        if(next!=null){
+            stringRepresentation += "["+next.getData()+"]";
+        } else {
+            stringRepresentation += "[]";
+        }
+        stringRepresentation +="P";
+
+        if(previous!=null){
+            stringRepresentation += "["+previous.getData()+"]";
+        } else {
+            stringRepresentation += "[]";
+        }
+
+        stringRepresentation += ", data=" + data +
+                '}';
+
+        return stringRepresentation;
+    }
 }
